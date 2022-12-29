@@ -1,0 +1,402 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100%;
+    overflow: hidden;
+}
+#canvas{
+   
+    overflow: hidden;
+}
+.equation-holder-header{
+    background-color: #f7e7db;
+    width: 200px;
+    height: 50px;
+}
+.graph-name{
+    margin-top: 10px;
+    width: 150px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.equation-holder-input{
+    width: 150px;
+    background-color: transparent;
+    margin-left: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 15px;
+}
+.minmaxholder{
+    margin-top: 5px;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.minmax{
+    display: inline-block;
+    width: 35px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+.equation-color{
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: #f7e7db;
+}
+.line-width{
+    margin-left: 10px;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.equation{
+    margin-top: 10px;
+    width: 150px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+}
+input[type="text"]:focus{
+    outline: none;
+}
+.equation-holder{
+    border-top: 1px dashed black;
+    height: 130px;
+    background-color: #f7e7db;
+}
+.left-box{
+    position: absolute;
+    left: 0;
+    bottom: 150px;
+    height: 83%;
+    width: 200px;
+    background-color: #F9F2ED;
+    border-right: 3px solid rgb(128, 128, 128);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.bottom-box{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    width: 90%;
+    background-color: #F9F2ED;
+    border-top: 3px solid rgb(128, 128, 128);
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play-box{
+    position: absolute;
+    right: 0px;
+    bottom: 0;  
+    width: 10%;
+    height: 150px;
+    background-color: #F9F2ED;
+    border-top: 3px solid rgb(128, 128, 128);
+    border-left: 3px solid rgb(128, 128, 128);
+    
+}
+.relative{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.select{
+    background-color: #f7e7db;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid black;
+   
+}
+.fps-holder{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    justify-content: center;
+    text-align: center;
+  
+   
+}
+.play-button{
+    
+    width: 75px;
+    height:75px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f7e7db;
+    border-radius: 15px;
+    font-size: 25px;
+
+}
+.play-button:hover{
+    background-color: rgb(255, 248, 194);
+}
+
+.frame{
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: #f7e7db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 50px;
+    margin-top: 10px;
+}
+.ci{
+    display: none;
+}
+#dropdown{
+    display: none;
+}
+.frame-selected{
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: rgb(255, 248, 194);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 50px;
+    margin-top: 10px;
+}
+.add-frame{
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #f7e7db;
+    border-radius: 15px;
+    font-size: 25px;
+    border: 1px solid black;
+}
+.add-frame-popup{
+    margin-top: 10px;
+    width: 100px;
+    height: 60px;
+    
+    
+    border-radius: 15px;
+    font-size: 10px;
+    
+    position: relative;
+    display: none;
+}
+.add-frame-popupb{
+    margin-top: 10px;
+    width: 100px;
+    height: 60px;
+    
+    
+    border-radius: 15px;
+    font-size: 10px;
+    
+    position: relative;
+    display: none;
+}
+.holder-popup{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.add-frame-popup-child{
+    background-color: #f7e7db;
+    width: 75px;
+    height: 20px;
+    margin-top: 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.add-frame-popup-child:hover{
+    background-color: rgb(255, 248, 194);
+}
+.add-frame:hover{
+    background-color: rgb(255, 248, 194);
+}
+.frame:hover{
+    background-color: rgb(255, 248, 194);
+}
+.frame-number{
+    font-size: 50px;
+}
+#newFrame{
+    position: absolute;
+    left: 115px;
+    top: 100px; 
+    width: 50px;
+}
+#duplicateFrame{
+    position: absolute;
+    left: 175px;
+    top: 100px; 
+    width: 75px;
+}
+#playanimationbutton{
+    position: absolute;
+    left: 260px;
+    top: 100px; 
+    width: 50px;
+}
+#labelfordropdown{
+    position: absolute;
+    left: 25px;
+    top: 100px; 
+}
+#dropdown{
+    position: absolute;
+    left: 75px;
+    top: 100px; 
+}
+.outer{
+    position: relative;
+   height: 100vh;
+}
+#myCheck{
+    position: absolute;
+    right: 25px;
+    top: 100px;  
+}
+#SPCheck{
+    position: absolute;
+    right: 25px;
+    top: 75px;  
+}
+#SPCheckText{
+    position: absolute;
+    right: 50px;
+    top: 75px;   
+}
+#color{
+    position: absolute;
+    right: 25px;
+    top: 75px;  
+}
+#colortext{
+    position: absolute;
+    right: 95px;
+    top: 80px;
+}
+#text{
+    position: absolute;
+    right: 50px;
+    top: 97px;   
+}
+#slide{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    
+}
+#textbox{
+   
+}
+.menu-press{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 50px;
+    width: 50px;
+}
+.menu-press2{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    right: 5px;
+    top: 5px;
+    display: none;
+    
+}
+div[onclick]{
+    cursor: pointer;
+}
+
+.menu-bar{
+    width: 50px;
+    height: 5px;
+    background-color: black;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #f7e7db;
+}
+.menu-bar2{
+    width: 5px;
+    height: 45px;
+   
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #f7e7db;
+}
+.menu-box{
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 65px;
+    width: 175px;
+    height: 150px;
+    background-color: #f7e7db;
+    border-radius: 15px;
+}
+#p{
+     position: absolute;
+    right: 200px;
+    top: 50px;
+    color: blue;
+}
+#m{
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    
+    transform: translateX(-50%) translateY(-50%);
+    color: rgba(139, 139, 134, 0.288);
+
+ font-size: 8vw;
+}
+#graph_holder{
+    position: absolute;
+     right: 50px;
+    top: 100px;
+
+   padding: 25px;
+    text-align: center;
+}
+
+.m{
+    width: 50px;
+}
+.t{
+    width: 100px;
+}

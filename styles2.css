@@ -1,0 +1,1003 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100%;
+    overflow: hidden;
+    background-color: #e3ecf0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.main{
+    background-color: white;
+}
+.covering{
+    position: absolute;
+    left: 300px;
+    bottom: 150px;
+    background-color: rgba(0, 0, 255, 0.414);
+    width: calc(100vw - 300px);
+    height: calc(100vh - 150px);
+    
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 50px;
+    display: none;
+}
+.download-covering{
+    position: absolute;
+    left: 300px;
+    bottom: 150px;
+    background-color: rgba(0, 0, 255, 0.414);
+    width: calc(100vw - 300px);
+    height: calc(100vh - 150px);
+    
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+}
+
+#canvas{
+   
+    overflow: hidden;
+    position: absolute;
+    left: 300px;
+    z-index: 0;
+   
+}
+.equation-holder-header{
+    background-color: #e3ecf0;
+    width: 300px;
+    height: 50px;
+}
+.graph-name{
+    margin-top: 10px;
+    width: 250px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(165, 165, 165);
+    font-size: 15px;
+   
+}
+.equation-holder-input{
+    width: 250px;
+    background-color: transparent;
+    margin-left: 10px;
+    border: none;
+    border-bottom: 3px solid rgb(165, 165, 165);
+    margin-top: 15px;
+    font-size: 25px;
+}
+.minmaxholder{
+    margin-top: 5px;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.minmax{
+    display: inline-block;
+    width: 62.5px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-bottom: 2px solid rgb(14, 14, 14);
+    background-color: transparent;
+    font-size: 15px;
+}
+.equation-color{
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    background-color: #e3ecf0;
+}
+.line-width{
+    margin-left: 10px;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(165, 165, 165);
+    font-size: 15px;
+}
+.equation{
+    margin-top: 10px;
+    width: 250px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(165, 165, 165);
+    font-size: 15px;
+}
+input[type="text"]:focus{
+    outline: none;
+}
+.equation-holder{
+   
+    height: 130px;
+    background-color: #e3ecf0;
+}
+.left-box{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #e3ecf0;
+    border-right: 3px solid rgb(128, 128, 128);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.menu-holder{
+    position:absolute;
+    right: 0;
+    top: 0px;
+    width: 150px;
+    height: 25px;
+    display: flex;
+    z-index: 5;
+}
+.menu-holder-retracted{
+    position:absolute;
+    right: 0;
+    top: 0px;
+    width: 150px;
+    height: 25px;
+    display: flex;
+    animation-name: menuHolderRetract;
+    animation-duration: 1s;
+    z-index: 5;
+}
+.menu-holder-activated{
+    position:absolute;
+    right: 0;
+    top: 250px;
+    width: 150px;
+    height: 25px;
+    display: flex;
+    animation-name: menuHolder;
+    animation-duration: 1s;
+    z-index: 5;
+}
+.menu{
+    position:absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 250px;
+    background-color: #e3ecf0;
+    animation-name: menuAnim;
+    animation-duration: 1s;
+    z-index: 5;
+}
+
+.menu-retracted{
+    position:absolute;
+    right: 0;
+    top: -250px;
+    width: 150px;
+    height: 250px;
+    background-color: #e3ecf0;
+    animation-name: menuRetract;
+    animation-duration: 1s;
+    z-index: 5;
+}
+.settings-menu{
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.exit-box{
+    position:absolute;
+    right: 150px;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 0, 0);
+    margin-right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+     z-index: 5;
+    
+}
+.exit-box:hover{
+    cursor: pointer;
+}
+
+.settings-box{
+    width: 100%;
+    height: calc(250px / 3);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    z-index: 5;
+}
+.file-menu{
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+   display: none;
+    
+}
+.file-box-header{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}
+.file-box{
+    width: 100%;
+    height: calc(250px / 3 - 10px);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+.file-button{
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+.file-button1{
+    width: 100px;
+    height: 50px;
+    background-color:rgb(142, 122, 255); 
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+#fileToUpload{
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+.alert{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    display: none;
+}
+
+.alert-header{
+    font-size: 40px;
+}
+.alert-button{
+    border: none;
+    background-color: #b6dff0;
+    border-radius: 15px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    z-index: 10;
+}
+.alert-button:hover{
+    background-color: #9dc0cf;
+    cursor: pointer;
+}
+.head-button:hover{
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+.file-button:hover{
+    cursor: pointer;
+    background-color:rgb(142, 122, 255); 
+}
+.file-text{
+    color: white;
+    font-size: 15px;
+}
+@keyframes menuAnim{
+   from {top: -250px;}
+   to {top: 0;}
+}
+@keyframes menuHolder{
+    from {top: 0px;}
+    to {top: 250px;}
+ }
+ @keyframes menuHolderRetract{
+    from {top: 250px;}
+    to {top: 0px;}
+ }
+ @keyframes menuRetract{
+    from {top: 0px;}
+    to {top: -250px;}
+ }
+.menu-button{
+width: 50%;
+height: 100%;
+background-color: blue;
+color: white;
+border: none;
+}
+
+.menu-button-pressed{
+    width: 50%;
+    height: 100%;
+    background-color:rgb(142, 122, 255); 
+    color: white;
+    border: none;
+    }
+.menu-button:hover{
+    background-color:rgb(142, 122, 255); 
+    cursor: pointer;
+}
+#settings_button{
+   margin-right: 1px;
+}
+#file_button{
+    margin-left: 1px;
+}
+.x{
+    color: white;
+    font-size: 25px;
+   
+}
+
+.bottom-box{
+    position: absolute;
+    left: 300px;
+    bottom: 0;
+    height: 150px;
+    width: calc(100vw - 650px);
+    background-color: #e3ecf0;
+    border-top: 3px solid rgb(128, 128, 128);
+    overflow-x: auto;
+    display: grid;
+    grid: auto / auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+    align-items: center;
+    justify-content: left;
+}
+.new-frame-box{
+    position: absolute;
+    right: 175px;
+    bottom: 0;  
+    width: 175px;
+    height: 150px;
+    background-color: #e3ecf0;
+    border-top: 3px solid rgb(128, 128, 128);
+    border-left: 3px solid rgb(128, 128, 128);
+}
+.hidden{
+    display: none;
+}
+.play-box{
+    position: absolute;
+    right: 0px;
+    bottom: 0;  
+    width: 175px;
+    height: 150px;
+    background-color: #e3ecf0;
+    border-top: 3px solid rgb(128, 128, 128);
+    border-left: 3px solid rgb(128, 128, 128);
+    
+}
+.relative{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.select{
+    background-color: rgb(187, 175, 254);
+    width: 60px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: rgb(2, 103, 255);
+    border: none;
+
+    color: white;
+}
+.select:hover{
+    background-color:rgb(142, 122, 255); 
+}
+.fps-holder{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    justify-content: center;
+    text-align: center;
+    
+   
+}
+.play-button{
+    
+    width: 75px;
+    height:75px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(2, 103, 255);
+    border-radius: 15px;
+    font-size: 25px;
+    color: white;
+    border: none;
+
+}
+.play-button:hover{
+    background-color: rgb(163, 147, 252);
+}
+
+.frame{
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: rgb(187, 175, 254);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 50px;
+    margin-top: 10px;
+    resize: none;
+    background-color: rgb(2, 103, 255);
+    color: white;
+}
+.ci{
+    display: none;
+}
+#dropdown{
+    display: none;
+}
+.frame-selected{
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color:rgb(142, 122, 255); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 50px;
+    margin-top: 10px;
+   
+    color: white;
+}
+.frame-buttons{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.add-frame-box{
+    width: 125px;
+    height: 25px;
+    font-size: 15px;
+    margin: 5px;
+    background-color: rgb(2, 103, 255);
+    
+    border-radius: 5px;
+    border: 1px solid black;
+    border: none;
+    color: white;
+}
+.add-frame-box:hover{
+    background-color:rgb(142, 122, 255); 
+}
+.add-frame{
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(187, 175, 254);
+    border-radius: 15px;
+    font-size: 25px;
+    border: 1px solid black;
+}
+.add-frame-popup{
+    margin-top: 10px;
+    width: 100px;
+    height: 60px;
+    
+    
+    border-radius: 15px;
+    font-size: 10px;
+    
+    position: relative;
+    display: none;
+}
+.add-frame-popupb{
+    margin-top: 10px;
+    width: 100px;
+    height: 60px;
+    
+    
+    border-radius: 15px;
+    font-size: 10px;
+    
+    position: relative;
+    display: none;
+}
+.holder-popup{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.add-frame-popup-child{
+    background-color: rgb(187, 175, 254);
+    width: 75px;
+    height: 20px;
+    margin-top: 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.add-frame-popup-child:hover{
+    background-color: rgb(142, 122, 255); 
+}
+.add-frame:hover{
+    background-color: rgb(142, 122, 255); 
+}
+.frame:hover{
+    background-color: rgb(142, 122, 255); 
+}
+.frame-number{
+    font-size: 50px;
+}
+#newFrame{
+    position: absolute;
+    left: 115px;
+    top: 100px; 
+    width: 50px;
+}
+#duplicateFrame{
+    position: absolute;
+    left: 175px;
+    top: 100px; 
+    width: 75px;
+}
+#playanimationbutton{
+    position: absolute;
+    left: 260px;
+    top: 100px; 
+    width: 50px;
+}
+#labelfordropdown{
+    position: absolute;
+    left: 25px;
+    top: 100px; 
+}
+#dropdown{
+    position: absolute;
+    left: 75px;
+    top: 100px; 
+}
+.outer{
+    position: relative;
+   height: 100vh;
+}
+#myCheck{
+   margin-left: 10px;
+   width: 25px;
+   height: 25px;
+}
+#SPCheck{
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+}
+#SPCheckText{
+    position: absolute;
+    right: 50px;
+    top: 75px;   
+}
+#color{
+    position: absolute;
+    right: 25px;
+    top: 75px;  
+}
+#colortext{
+    position: absolute;
+    right: 95px;
+    top: 80px;
+}
+#text{
+    position: absolute;
+    right: 50px;
+    top: 97px;   
+}
+#slide{
+    margin-left: 5px;
+   width: 100px;
+    
+}
+#textbox{
+   
+}
+.menu-press{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+.menu-press2{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    right: 5px;
+    top: 5px;
+    display: none;
+    
+}
+div[onclick]{
+    cursor: pointer;
+}
+
+.menu-bar{
+    width: 50px;
+    height: 5px;
+    background-color: black;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #f7e7db;
+}
+.menu-bar2{
+    width: 5px;
+    height: 45px;
+   
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: #f7e7db;
+}
+.menu-box{
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 65px;
+    width: 175px;
+    height: 150px;
+    background-color: #f7e7db;
+    border-radius: 15px;
+}
+#p{
+     position: absolute;
+    right: 200px;
+    top: 50px;
+    color: blue;
+}
+#m{
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    
+    transform: translateX(-50%) translateY(-50%);
+    color: rgba(139, 139, 134, 0.288);
+
+ font-size: 8vw;
+}
+#graph_holder{
+    position: absolute;
+     right: 50px;
+    top: 100px;
+
+   padding: 25px;
+    text-align: center;
+}
+
+.m{
+    width: 50px;
+}
+.t{
+    width: 100px;
+}
+.main{
+    visibility:visible;
+    animation-name: maining;
+    animation-duration: 2s;
+}
+.load{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    animation-name: loading;
+    animation-duration: 2s;
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(54, 131, 247);
+    padding: 50px;
+    color: white;
+    border-radius: 100px;
+}
+.none{
+    display: none;
+}
+#dl{
+   background-color: rgb(196, 196, 196);
+   color: black;
+   width: 300px;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   border: 2px solid black;
+   text-decoration: none;
+   
+}
+.title{
+ 
+    font-size: 25px;
+    text-align: left;
+   position: absolute;
+   left: 325px;
+   top: 15px;
+   z-index: 1;
+}
+#arrayData{
+    display: none;
+}
+.exit-mark{
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 100px;
+    color: red;
+
+}
+.exit-mark:hover{
+    cursor: pointer;
+    color: white;
+}
+#export-button{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#export-text:after{
+    animation-name: export;
+    animation-duration: 3s;
+    content: "Exporting";
+    animation-iteration-count: infinite;
+}
+@keyframes maining {
+    0% {  opacity:0;}
+    99% {  opacity:0;}
+    100% {  opacity:1;}
+  }
+  @keyframes loading {
+    0% {font-size: 30px; opacity: 1;}
+    99% {font-size: 50px; opacity: 1;}
+    100% {font-size: 50px; opacity: 0;}
+  }
+  @keyframes export {
+    0% {content: "Exporting";}
+    25% {content: "Exporting.";}
+    50% {content: "Exporting..";}
+    75% {content: "Exporting...";}
+  
+  }
+  
+
+  .tutorial{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background-color: #b6dff0;
+    z-index: 2;
+  }
+ 
+  #tutorial2{
+    left: 300px;
+    top: 50px;
+    display: none;
+    z-index: 2;
+    height: 125px;
+  }
+  #tutorial3{
+    right: 175px;
+    bottom: 150px;
+    display: none;
+    z-index: 2;
+    height: 250px;
+    width: 175px;
+  }
+  #tutorial4{
+    left: 300px;
+    bottom: 150px;
+    display: none;
+    z-index: 2;
+    height: 200px;
+    width: 175px;
+  }
+  #tutorial5{
+    left: 300px;
+    top: 0px;
+    display: none;
+    z-index: 2;
+  }
+  #tutorial6{
+    right: 0px;
+    bottom: 150px;
+    display: none;
+    z-index: 2;
+    height: 150px;
+    width: 175px;
+  }
+  #tutorial7{
+    right: 150px;
+   top: 0px;
+    display: none;
+    z-index: 2;
+    height: 150px;
+    width: 175px;
+  }
+  #tutorial8{
+    left: 300px;
+   top: 0px;
+    
+    z-index: 5;
+    height: 150px;
+    width: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  .next{
+    margin: 5px;
+    width: 100px;
+    height: 25px;
+    background-color: blue;
+border: none;
+color: white;
+border-radius: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 15px;
+  }
+  .next1{
+    margin: 5px;
+    width: 100px;
+    height: 25px;
+    background-color: blue;
+border: none;
+color: white;
+border-radius: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 15px;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: 5px;
+  }
+  
+  .next:hover{
+    cursor: pointer;
+    background-color:rgb(142, 122, 255); 
+  }
+  #bottom-arrow{
+    color: white;
+   font-size: 50px;
+   position: absolute;
+   right: 15px;
+   bottom: 0;
+   
+   
+   height: 75px;
+  }
+  .corner-arrow{
+    color: white;
+   font-size: 50px;
+   position: absolute;
+   left: 15px;
+   top: 0px;
+  
+   
+   height: 100%;
+  }
+  .tutorial-text{
+    width: 70%;
+    height: 80%;
+   font-size: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+  #tt{
+    width: 70%;
+    height: 80%;
+   font-size: 15px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+  #tutorial-text{
+    width: 70%;
+    height: 85px;
+   font-size: 15px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+  #tutorial1{
+    left: 300px;
+    top: 0px;
+    display: none;
+    z-index: 2;
+    height: 150px;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (pointer:none), (pointer:coarse){
+      .body1{
+          display: none;
+          
+      }
+      .body2{
+          display: block;
+      }
+      
+  }

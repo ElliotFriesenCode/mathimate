@@ -1,0 +1,483 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    
+    background-color: #e3ecf0;
+}
+
+.head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    background-color:#e3ecf0;
+    z-index: 1;
+}
+.relative{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.relative-return{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation-name: relative-return;
+    animation-duration: 1s;
+    opacity: 0;
+}
+.head-navigation{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    top: 0;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head-button{
+    margin: 25px;
+    width: 200px;
+    height: 50px;
+    font-size: 1.75vw;
+    background-color: transparent;
+    border: none;
+    transition: 250ms;
+    
+}
+
+.head-button:hover{
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+#graph-button1{
+    background-color: rgb(79, 79, 255);
+    border-radius: 15px;
+    color: white;
+    transition: 250ms;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tutorial{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.number_holder{
+    position: absolute;
+    top:15%;
+    right: 50%;
+transform: translate(50%, -50%);
+font-size: 30px;
+background-color: blue;
+color: white;
+height: 50px;
+width: 100%;
+border-radius: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+animation-name: number-holder;
+animation-duration: 2s;
+}
+@keyframes number-holder {
+    
+  }
+#graph-button1:hover{
+    height: 75px;
+    
+}
+.home-img{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(50%, -50%);
+    
+    
+}
+.home-img-return{
+    position: absolute;
+    top: 50%;
+    left: 150%;
+    transform: translate(50%, -50%);
+    animation-name: img_return;
+    animation-duration: 1s;
+}
+.top-box{
+    width: 100%;
+    height: 100vh;
+    background-color: #e3ecf0;
+    position: relative;
+}
+
+.top2-box{
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(119, 119, 119);
+}
+.top3-box{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+}
+.header-div{
+    height: 300px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    right: 65%;
+    transform: translate(50%, -50%);
+    line-height: 0.2;
+    animation-name: example;
+    animation-duration: 2s;
+}
+.header-div-return{
+    height: 300px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    right: 150%;
+    transform: translate(50%, -50%);
+    line-height: 0.2;
+    animation-name: return_left;
+    animation-duration: 1s;
+}
+.header-button-div{
+    height: 100px;
+    width: 600px;
+   
+    position: absolute;
+    top: 70%;
+    right: 65%;
+    transform: translate(50%, -50%);
+   
+}
+.header-button{
+    width: 300px;
+    font-size: 30px;
+    height: 75px;
+    background-color: rgb(79, 79, 255);
+    border: none;
+    color: white;
+    border-radius: 15px;
+    animation-name: fadein;
+    animation-duration: 2s;
+    transition: 250ms;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-button-return{
+    width: 300px;
+    font-size: 30px;
+    height: 75px;
+    background-color: #e3ecf0;
+    border: none;
+    color: #e3ecf0;
+    border-radius: 15px;
+    animation-name: fadeout;
+    animation-duration: 1s;
+    transition: 250ms;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-button:hover{
+    width: 350px;
+    cursor: pointer;
+}
+
+.header-text{
+ font-size: 5vw;
+ font-weight: bold;
+ color:rgb(0, 0, 0);
+}
+.mathimate{
+    color: #4A6FA5;
+}
+@media (max-width: 1300px){
+    .home-img{
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(50%, -50%);
+        
+        
+    }
+    .header-button-div{
+        height: 100px;
+        width: 600px;
+       
+        position: absolute;
+        top: 65%;
+        right: 65%;
+        transform: translate(50%, -50%);
+       
+    }
+   
+}
+
+
+@keyframes example {
+    from {right: 150%;}
+    to {right: 65%;}
+  }
+  @keyframes img_return{
+    from{left: 40%;}
+    to{right: 150%;}
+  }
+  @keyframes relative-return {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+  @keyframes return_left {
+    from {right: 65%;}
+    to {right: 150%;}
+  }
+  @keyframes hover {
+    from {font-size: 25px;}
+    to {font-size: 30px;}
+  }
+  @keyframes fadein {
+    0% {background-color: #e3ecf0;
+    color: #e3ecf0;}
+    75% {background-color: #e3ecf0;
+    color: #e3ecf0;}
+    100% {background-color: rgb(79, 79, 255);
+    color: white; }
+  }
+  @keyframes fadeout {
+    0% {background-color: rgb(79, 79, 255);
+        color: white; }
+    100% {background-color: #e3ecf0;
+    color: #e3ecf0;}
+    75% {background-color: #e3ecf0;
+    color: #e3ecf0;}
+   
+  }
+  @media (max-width: 1150px){
+    .home-img{
+        display: none;
+        
+        
+    }
+    .header-div{
+        height: 300px;
+        width: 600px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        line-height: 0.2;
+        animation-name: example;
+        animation-duration: 2s;
+        text-align:  center;
+
+    }
+    .header-button-div{
+        height: 100px;
+        width: 600px;
+       
+        position: absolute;
+        top: 60%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .header-text{
+        font-size: 50px;
+        font-weight: bold;
+       
+       }
+       .head-button{
+        margin: 25px;
+        width: 200px;
+        height: 50px;
+        font-size: 25px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-button:hover{
+        margin: 25px;
+        width: 200px;
+        height: 50px;
+        font-size: 25px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-navigation{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-div-return{
+        height: 300px;
+        width: 600px;
+        position: absolute;
+        top: 50%;
+        right: 150%;
+        transform: translate(50%, -50%);
+        line-height: 0.2;
+        animation-name: return_left;
+        animation-duration: 2s;
+        text-align:  center;
+    }
+    @keyframes example {
+        from {right: 150%;}
+        to {right: 50%;}
+      }
+      @keyframes return_left {
+        from {right: 50%;}
+        to {right: 150%;}
+      }
+      @keyframes img_return{
+        from{left: 150%;}
+        to{right: 150%;}
+      }
+}
+@media (pointer:none), (pointer:coarse){
+     .home-img{
+        display: none;
+        
+        
+    }
+    .header-div{
+        height: 300px;
+        width: 600px;
+        position: absolute;
+        top: 40%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        line-height: 0.2;
+        animation-name: example;
+        animation-duration: 2s;
+        text-align:  center;
+
+    }
+      .header-div-return{
+        height: 300px;
+        width: 1000px;
+        position: absolute;
+        top: 40%;
+        right: 150%;
+        transform: translate(50%, -50%);
+        line-height: 0.2;
+        animation-name: return_left;
+        animation-duration: 2s;
+        text-align:  center;
+    }
+    .header-button-div{
+        height: 150px;
+        width: 600px;
+       
+        position: absolute;
+        top: 60%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .header-button{
+        width: 600px;
+    font-size: 50px;
+    height: 150px;
+    background-color: rgb(79, 79, 255);
+    border: none;
+    color: white;
+    border-radius: 15px;
+    animation-name: fadein;
+    animation-duration: 2s;
+    transition: 250ms;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .header-text{
+        font-size: 100px;
+        font-weight: bold;
+       
+       }
+       .head-button{
+        margin: 25px;
+        width: 400px;
+        height: 100px;
+        font-size: 50px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-button:hover{
+        margin: 25px;
+        width: 200px;
+        height: 50px;
+        font-size: 25px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-navigation{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background-color:#e3ecf0;
+    z-index: 1;
+}
+    .header-div{
+        width: 1000px;
+    }
+    @keyframes example {
+        from {right: 150%;}
+        to {right: 50%;}
+      }
+      @keyframes return_left {
+        from {right: 50%;}
+        to {right: 150%;}
+      }
+      @keyframes img_return{
+        from{left: 150%;}
+        to{right: 150%;}
+      }
+}

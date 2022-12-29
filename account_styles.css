@@ -1,0 +1,602 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-color:#e3ecf0;
+   
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.holder{
+    position: absolute;
+    height: 70vh;
+    width: 1000px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+
+}
+.half{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-holder{
+    height: 50vh;
+    width: 400px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text:focus{
+    outline: none;
+}
+.text{
+    margin: 15px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 15px;
+}
+.button{
+    margin: 15px;
+    width: 305px;
+    height: 100px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    transition: 250ms;
+}
+.button:hover{
+    transition: 250ms;
+    font-size: 30px;
+   
+    cursor: pointer;
+}
+.save{
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+    height: 75px;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.login-button{
+    margin: 15px;
+    width: 305px;
+    height: 50px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    transition: 250ms;
+}
+.login-button:hover{
+    transition: 250ms;
+    font-size: 30px;
+    
+    cursor: pointer;
+}
+.signup-header{
+    margin-left: -15px;
+    width: 300px;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 25px;
+    text-align: left;
+}
+.login-header{
+    margin-left: -15px;
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 25px;
+    text-align: left;
+}
+.welcome-text{
+    font-size: 50px;
+    color: white;
+}
+.sub-welcome{
+    font-size: 25px;
+    color: white;
+}
+#welcome{
+    background-color:  #4A6FA5;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#login{
+    color: beige;
+    border-bottom: 1px solid beige;
+}
+#signup{
+    color: beige;
+    border-bottom: 1px solid beige;
+}
+#login:hover{
+cursor: pointer;
+}
+#signup:hover{
+    cursor: pointer;
+    }
+.head{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    z-index: 1;
+    background-color: #e3ecf0;
+}
+.relative{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.relative-return{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation-name: relative-return;
+    animation-duration: 1s;
+    opacity: 0;
+}
+.head-navigation{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 50%;
+    top: 0;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head-button{
+    margin: 25px;
+    width: 200px;
+    height: 50px;
+    font-size: 1.75vw;
+    background-color: transparent;
+    border: none;
+    transition: 250ms;
+    
+}
+.alert{
+    width: 500px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    display: none;
+}
+
+.alert-header{
+    font-size: 40px;
+}
+.alert-button{
+    border: none;
+    background-color: #b6dff0;
+    border-radius: 15px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    z-index: 10;
+}
+.alert-button:hover{
+    background-color: #9dc0cf;
+    cursor: pointer;
+}
+.head-button:hover{
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+#graph-button1{
+    background-color: rgb(79, 79, 255);
+    border-radius: 15px;
+    color: white;
+    transition: 250ms;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#graph-button1:hover{
+    height: 75px;
+}
+#login-holder{
+    display: none;
+}
+.side-bar{
+   position: fixed;
+    left: 0;
+    top: 0;
+    width: 400px;
+    background-color: hsl(0, 0%, 100%);
+    height: calc(100vh);
+
+}
+.right-holder{
+    position: absolute;
+    left: 400px;
+    top: 75px;
+    width: calc(100% - 400px);
+    text-align: left;
+    height: calc(100% - 75px);
+    background-color: hsl(240, 5%, 96%);
+    overflow: auto;
+}
+#settings-screen{
+    display: none;
+}
+.save:hover{
+    cursor: pointer;
+}
+.button-holder{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.settings-button{
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    background-color: transparent;
+    margin: 15px;
+    border-radius: 5px;
+border: none;
+text-align: left;
+}
+#settings-link{
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.settings-button-focused{
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    background-color: transparent;
+    background-color: #f5f5f5;
+    margin: 15px;
+    border-radius: 5px;
+    border: none;
+    text-align: left;
+
+}
+.profile-holder{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  
+    width: 90%;
+    height: 90%;
+    
+}
+#profile{
+    font-size:50px;
+    margin-top: -25px;
+}
+#account{
+font-size: 30px;
+} 
+#account1{
+    font-size: 30px;
+    color: blue;
+    } 
+    #account1:hover{
+        cursor: pointer;
+        } 
+.input-header{
+    font-size: 25px;
+}
+.input-box{
+    width: 500px;
+    height: 75px;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 15px;
+}
+.sub-welcome1{
+    display: none;
+}
+@media (max-width: 1150px){
+    .holder{
+        position: absolute;
+        height: 70vh;
+        width: 400px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+    .header-text{
+        font-size: 50px;
+        font-weight: bold;
+       
+       }
+       .head-button{
+        margin: 25px;
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-button:hover{
+        margin: 25px;
+        width: 200px;
+        height: 50px;
+        font-size: 25px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-navigation{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+   
+    .header{
+        font-size: 50px;
+        margin-top: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    #welcome{
+        display: none;
+    }
+    .half{
+        width: 100%;
+    }
+    .sub-welcome1{
+        display: block;
+        color: black;
+        z-index: 5;
+        font-size: 15px;
+    }
+    #login{
+        color: blue;
+        border-bottom: 1px solid blue;
+        
+    }
+    #signup{
+        color: blue;
+        border-bottom: 1px solid blue;
+        
+    }
+}
+
+@media (pointer:none), (pointer:coarse){
+    
+    .login-holder{
+         height: 50vh;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .holder{
+        position: absolute;
+        height: 55%;
+        width: 80%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+    .text{
+        margin: 15px;
+    width: 90%;
+    height: 100px;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 30px;
+    padding: 0px;
+    border-radius: 0;
+    }
+    
+    .header-text{
+        font-size: 50px;
+        font-weight: bold;
+       
+       }
+       .head-button{
+        margin: 25px;
+        width: 400px;
+        height: 100px;
+        font-size: 50px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-button:hover{
+        margin: 25px;
+        width: 400px;
+        height: 100px;
+        font-size: 50px;
+        background-color: transparent;
+        border: none;
+        transition: 250ms;
+        
+    }
+    .head-navigation{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+   
+    .header{
+        font-size: 50px;
+        margin-top: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    #welcome{
+        display: none;
+    }
+    .half{
+        width: 100%;
+    }
+    .sub-welcome1{
+        display: block;
+        color: black;
+        z-index: 5;
+        font-size: 15px;
+    }
+    #login{
+        color: blue;
+        border-bottom: 1px solid blue;
+        
+    }
+    #signup{
+        color: blue;
+        border-bottom: 1px solid blue;
+        margin-left: 0;
+        
+    } 
+    #signup-submit{
+        font-size: 30px;
+        
+    } 
+    .sub-welcome1{
+        display: block;
+        color: black;
+        z-index: 5;
+        font-size: 30px;
+    }
+    .signup-header{
+        
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 50px;
+    text-align: left;
+    }
+     .login-header{
+        
+    width: 100%;
+    height: 100px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    font-size: 50px;
+    text-align: left;
+    }
+    .login-button{
+        font-size: 30px;
+        width: 300px;
+        height: 100px;
+    }
+    .head{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    z-index: 1;
+    background-color: #e3ecf0;
+}
+    .side-bar{
+   position: fixed;
+    left: 0;
+    top: 150px;
+    width: 400px;
+    background-color: hsl(0, 0%, 100%);
+    height: calc(100vh - 150px);
+
+}
+ .right-holder{
+    position: absolute;
+    left: 400px;
+    top: 150px;
+    width: calc(100% - 400px);
+    text-align: left;
+    height: calc(100% - 150px);
+    background-color: hsl(240, 5%, 96%);
+}
+.save{
+    width: 200px;
+    background-color: white;
+    border: 1px solid black;
+    height: 75px;
+    font-size: 25px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: lighter;
+    z-index: 10;
+}
+
+    
+}
+ 
